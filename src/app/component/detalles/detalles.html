@@ -1,0 +1,96 @@
+<app-header></app-header>
+
+<div class="container my-5">
+
+  <!-- Título -->
+  <div class="border rounded-3 p-3 mb-2 bg-light">
+    <h5 class="mb-0 fw-semibold text-dark text-start">
+      DETALLE DEL ESTUDIANTES
+    </h5>
+  </div>
+  <!-- Loader -->
+  <div *ngIf="loading()" class="text-center my-5">
+    <div class="spinner-border text-primary" role="status"></div>
+    <p class="mt-2 text-muted">Cargando estudiante...</p>
+  </div>
+
+  <!-- Error -->
+  <div *ngIf="error && !loading()" class="alert alert-danger text-center">
+    Error al cargar el estudiante
+  </div>
+
+  <!-- Contenido -->
+  <div *ngIf="!loading() && estudiante && !error" class="row justify-content-center">
+    <div class="col-lg-7 col-md-9">
+
+      <div class="card shadow-lg border-0">
+
+        <!-- Header limpio -->
+        <div class="card-header text-white" style="background:#0a2540;">
+          <h4 class="mb-0">
+            {{ estudiante.firstName }} {{ estudiante.lastName }}
+          </h4>
+          <small class="opacity-75">
+            Documento: {{ estudiante.identificationNumber }}
+          </small>
+        </div>
+
+        <!-- Body -->
+        <div class="card-body px-4 py-4">
+
+          <div class="row mb-3">
+            <div class="col-md-4 text-muted">Programa</div>
+            <div class="col-md-8 fw-semibold">
+              {{ estudiante.academicProgram || '-' }}
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-md-4 text-muted">Email</div>
+            <div class="col-md-8 fw-semibold">
+              {{ estudiante.email || '-' }}
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-md-4 text-muted">Teléfono</div>
+            <div class="col-md-8 fw-semibold">
+              {{ estudiante.phoneNumber || '-' }}
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-md-4 text-muted">Edad</div>
+            <div class="col-md-8 fw-semibold">
+              {{ estudiante.age ?? '-' }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 text-muted">Fecha de matrícula</div>
+            <div class="col-md-8 fw-semibold">
+              {{ estudiante.enrollmentDate | date:'longDate' }}
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="card-footer bg-light d-flex justify-content-between px-4 py-3">
+
+          <button class="btn btn-outline-secondary px-4" (click)="volver()">
+            Volver
+          </button>
+
+          <a class="btn btn-primary px-4" [routerLink]="['/editar', estudiante.id]">
+            Editar
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
