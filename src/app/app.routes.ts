@@ -5,6 +5,7 @@ import { Detalles } from './component/detalles/detalles';
 import { Header } from './component/header/header';
 import { Agregar } from './component/agregar/agregar';
 import { Footer } from './component/footer/footer';
+import { Login } from './component/login/login';
 
 
 export const routes: Routes = [
@@ -14,4 +15,6 @@ export const routes: Routes = [
   { path: 'detalles/:id', component: Detalles },
   { path: 'header', component: Header },
   { path: 'footer', component: Footer },
+  { path: 'login', component: Login },
 ];
+
