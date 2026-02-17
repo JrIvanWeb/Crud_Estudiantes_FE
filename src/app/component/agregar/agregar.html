@@ -69,8 +69,8 @@
           </div>
           <div class="col-md-6 mb-3">
             <label class="form-label">Edad</label>
-            <input type="text" class="form-control" name="edad" [(ngModel)]="estudiante.age"
-              #telefono="ngModel" required [class.is-invalid]="telefono.invalid && enviado" />
+            <input type="text" class="form-control" name="edad" [(ngModel)]="estudiante.age" #telefono="ngModel"
+              required [class.is-invalid]="telefono.invalid && enviado" />
             <div class="invalid-feedback">Debe llenar este campo</div>
           </div>
         </div>
@@ -91,18 +91,15 @@
     </div>
   </div>
 </div>
-
 <!-- MODAL ÉXITO -->
 <div class="modal fade" id="modalExito" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content border-0">
-
       <!-- Header azul -->
       <div class="modal-header text-white" style="background-color:#0a2540;">
         <h5 class="modal-title">Registro guardado</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
-
       <!-- Body -->
       <div class="modal-body text-center">
         <p class="mb-1 fw-semibold">
@@ -112,7 +109,6 @@
           La información se guardó correctamente
         </small>
       </div>
-
       <!-- Footer -->
       <div class="modal-footer justify-content-center">
         <button type="button" class="btn btn-primary px-4" (click)="irALista()">
