@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <div class="container mt-4" style="max-width: 700px;">
-<div class="border rounded-3 p-3 mb-2 bg-light">
+  <div class="border rounded-3 p-3 mb-2 bg-light">
     <h5 class="mb-0 fw-semibold text-dark text-start">
       EDITAR ESTUDIANTE
     </h5>
@@ -67,22 +67,30 @@
         </div>
 
         <!-- Programa -->
-        <div class="mb-4">
-          <label class="form-label">Programa</label>
+        <div class="row">
+          <div class=" col-md-6 mb-3">
+            <label class="form-label">Programa</label>
 
-          <select class="form-select" name="programa" [(ngModel)]="estudiante.academicProgram" #programa="ngModel"
-            required [class.is-invalid]="programa.invalid && enviado">
-            <option value="" disabled>
-              Seleccione un programa
-            </option>
+            <select class="form-select" name="programa" [(ngModel)]="estudiante.academicProgram" #programa="ngModel"
+              required [class.is-invalid]="programa.invalid && enviado">
+              <option value="" disabled>
+                Seleccione un programa
+              </option>
 
-            <option value="Ingeniería de Sistemas">Ingeniería de Sistemas</option>
-            <option value="Derecho">Derecho</option>
-            <option value="Administración">Administración</option>
-          </select>
+              <option value="Ingeniería de Sistemas">Ingeniería de Sistemas</option>
+              <option value="Derecho">Derecho</option>
+              <option value="Administración">Administración</option>
+            </select>
 
-          <div class="invalid-feedback">
-            Debe seleccionar un programa
+            <div class="invalid-feedback">
+              Debe seleccionar un programa
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Edad</label>
+            <input type="text" class="form-control" name="edad" [(ngModel)]="estudiante.age"
+              #telefono="ngModel" required [class.is-invalid]="telefono.invalid && enviado" />
+            <div class="invalid-feedback">Debe llenar este campo</div>
           </div>
         </div>
 
@@ -102,3 +110,4 @@
     </div>
   </div>
 </div>
+<app-footer></app-footer>

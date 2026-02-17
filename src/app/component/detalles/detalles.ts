@@ -1,6 +1,7 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Header } from '../header/header';
+import { Footer } from '../footer/footer';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EstudianteServicio, Estudiante } from '../../services/estudiante';
 import { finalize } from 'rxjs/operators';
@@ -9,7 +10,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-detalles',
   standalone: true,
-  imports: [CommonModule, Header, RouterLink],
+  imports: [CommonModule, Header, RouterLink, Footer],
   templateUrl: './detalles.html',
   styleUrl: './detalles.css'
 })

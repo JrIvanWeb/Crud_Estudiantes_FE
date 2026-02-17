@@ -2,7 +2,7 @@ import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
+import { Footer } from '../footer/footer';
 import { EstudianteServicio, Estudiante } from '../../services/estudiante';
 import { Header } from '../header/header';
 
@@ -12,7 +12,7 @@ import { Header } from '../header/header';
   imports: [
     CommonModule,
     FormsModule,
-    Header
+    Header, Footer
   ],
   templateUrl: './editar.html',
   styleUrl: './editar.css',

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { Footer } from '../footer/footer';
 import { EstudianteServicio, Estudiante } from '../../services/estudiante';
 import { Header } from '../header/header';
 
@@ -14,7 +14,7 @@ declare var bootstrap: any;
   imports: [
     CommonModule,
     FormsModule,
-    Header
+    Header, Footer
   ],
   templateUrl: './agregar.html',
   styleUrl: './agregar.css'
