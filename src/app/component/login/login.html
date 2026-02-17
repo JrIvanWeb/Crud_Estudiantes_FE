@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<div class="container py-4">
+<div class="container py-4 pt-lg-4">
   <div class="row justify-content-center g-4">
 
     <!-- Card Bienvenida -->
@@ -20,9 +20,7 @@
           Haz clic en el siguiente botón para comenzar el proceso.
         </p>
 
-        <button
-          class="btn btn-primary w-100 mt-3"
-          (click)="solicitarHojaVida()">
+        <button class="btn btn-primary w-100 mt-3">
           <i class="bi bi-file-earmark-text me-2"></i>
           Solicitar estudio de hoja de vida académica
         </button>
@@ -37,36 +35,25 @@
           Iniciar sesión
         </h4>
 
-        <form (ngSubmit)="login()" #loginForm="ngForm">
-
+        <form>
           <div class="mb-3">
             <input
               type="email"
               class="form-control"
-              placeholder="Correo institucional"
-              name="email"
-              [(ngModel)]="loginData.email"
-              required>
+              placeholder="Correo institucional">
           </div>
 
           <div class="mb-3">
             <input
               type="password"
               class="form-control"
-              placeholder="Contraseña"
-              name="password"
-              [(ngModel)]="loginData.password"
-              required>
+              placeholder="Contraseña">
           </div>
 
-          <button
-            type="submit"
-            class="btn btn-secondary w-100"
-            [disabled]="loginForm.invalid">
+          <button class="btn btn-secondary w-100">
             <i class="bi bi-box-arrow-in-right me-2"></i>
             Iniciar sesión
           </button>
-
         </form>
       </div>
     </div>
